@@ -46,16 +46,18 @@ const SLUGLIST = gql`
 `;
 
 export async function getStaticPaths() {
-  const { posts } = await graphQLClient.request(SLUGLIST);
+  const { posts } = await (graphQLClient.request(SLUGLIST) as any);
   return {
-    paths: posts.map((post) => ({ params: { slug: post.slug } })),
+    paths: posts.map((post: { slug: any }) => ({
+      params: { slug: post.slug },
+    })),
     fallback: false,
   };
 }
 
-export default async function Page({ params }) {
+export default async function Page({ params }: { params: any }) {
   const { slug } = params;
-  const data = await graphQLClient.request(QUERY, { slug });
+  const data = (await graphQLClient.request(QUERY, { slug })) as { post: any };
   const post = data.post;
   const date1 = new Date(post.datePublished).toLocaleDateString();
 

@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "app/services/index.jsx",
     ".next/types/app/posts/[slug]/page.tsx",
-    "app/posts/[slug]/page.jsx"
+    "app/posts/[slug]/page.tsx"
   ],
   "exclude": ["node_modules"]
 }
