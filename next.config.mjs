@@ -17,5 +17,4 @@ const nextConfig = {
     };
   },
 };
-// https:/media.graphassets.com/TsaPx3QgTSWO4CsmTgWA
 export default nextConfig;
