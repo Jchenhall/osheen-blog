@@ -9,7 +9,7 @@ const nextConfig = {
       },
     ],
   },
-  exportPathMap: function () {
+  generateStaticParams: function () {
     return {
       "/": { page: "/" },
       // '/blog/nextjs': { page: '/blog/[post]/comment/[id]' },        // wrong
