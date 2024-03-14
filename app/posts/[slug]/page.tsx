@@ -55,7 +55,7 @@ export async function getStaticPaths() {
   };
 }
 
-export default async function Page({ params }: { params: any }) {
+export default async function Post({ params }: { params: any }) {
   const { slug } = params;
   const data = (await graphQLClient.request(QUERY, { slug })) as { post: any };
   const post = data.post;
